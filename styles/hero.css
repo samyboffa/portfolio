@@ -1,0 +1,32 @@
+.heroContainer {
+  min-height: 140vh;
+  background: linear-gradient(
+    150deg,
+    rgba(1, 164, 207, 1) 0%,
+    rgba(138, 159, 199, 1) 42%,
+    rgba(161, 155, 197, 1) 57%,
+    rgba(219, 62, 191, 1) 100%
+  );
+}
+.HeroTitle {
+  transition: all 0.2s ease-in-out;
+  /* Prefix required. Even Firefox only supports the -webkit- prefix */
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: white;
+}
+.nameOdd {
+  color: white;
+}
+.nameEven {
+  color: transparent;
+}
+
+@media only screen and (max-width: 920px) {
+  .heroContainer {
+    padding-top: 30vh !important;
+    min-height: 150vh;
+  }
+  .titleSize {
+    font-size: 50px !important;
+  }
+}
