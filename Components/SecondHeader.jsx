@@ -18,12 +18,18 @@ const SecondHeader = () => {
       <div className="secondHeaderInline  d-flex w100 h100">
         <div className="w20  d-lg-flex justify-content-center align-items-center flex-column hideMobile">
           <div className="reseauLine"></div>
-          <div className="my-4">
-            <div>
+          <div className="my-4 d-flex flex-column gap-2">
+            <div className="pointer t02 socialMediaIcon">
               <Image src="/socialMedia/linkedin.png" width={30} height={30} />
             </div>
-            <div>fb</div>
-            <div>fb</div>
+            <div className="pointer t02 socialMediaIcon">
+              {" "}
+              <Image src="/socialMedia/github.png" width={30} height={30} />
+            </div>
+            <div className="pointer t02 socialMediaIcon">
+              {" "}
+              <Image src="/socialMedia/facebook.png" width={30} height={30} />
+            </div>
           </div>
           <div className="reseauLine"></div>
         </div>

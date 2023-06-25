@@ -2,6 +2,46 @@
   .hideMobile {
     display: none !important;
   }
+  .wm0 {
+    width: 0% !important;
+  }
+  .wm10 {
+    width: 10% !important;
+  }
+  .wm20 {
+    width: 20% !important;
+  }
+  .wm30 {
+    width: 30% !important;
+  }
+  .wm40 {
+    width: 40% !important;
+  }
+  .wm43 {
+    width: 43% !important;
+  }
+  .wm45 {
+    width: 45% !important;
+  }
+  .wm50 {
+    width: 50% !important;
+  }
+  .wm60 {
+    width: 60% !important;
+  }
+
+  .wm70 {
+    width: 70% !important;
+  }
+  .wm80 {
+    width: 80% !important;
+  }
+  .wm90 {
+    width: 90% !important;
+  }
+  .wm100 {
+    width: 100% !important;
+  }
 }
 
 /* @media only screen and (min-width: 920px) {

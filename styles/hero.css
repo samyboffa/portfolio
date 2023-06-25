@@ -1,5 +1,6 @@
 .heroContainer {
-  min-height: 140vh;
+  height: 140vh;
+  min-height: 1100px !important;
   background: linear-gradient(
     150deg,
     rgba(1, 164, 207, 1) 0%,
@@ -17,6 +18,7 @@
 .nameOdd {
   color: white;
 }
+
 .nameEven {
   color: transparent;
 }

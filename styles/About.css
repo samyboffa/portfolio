@@ -1,0 +1,71 @@
+.aboutTitle {
+  font-size: 7vw;
+
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+  color: white;
+  font-family: Bruno Ace;
+}
+.translate20 {
+  transform: translateX(-20%);
+}
+.aboutContainer {
+  overflow-x: hidden;
+  height: 100vh;
+  margin-top: -30vh;
+  overflow-y: hidden;
+}
+
+.leftAbout {
+  z-index: 2;
+}
+.aboutText {
+  line-height: 30px;
+}
+.aboutImage {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  /* background-image: url("/grid_0.png"); */
+  background: url("/grid_0.png") 50% / cover border-box /* background-origin */
+    padding-box;
+}
+
+.aboutImage::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  z-index: 1;
+  width: 120%;
+  height: 120%;
+  border-radius: 50%;
+  /* go outside padding-box by 
+     * a border-width ($b) in every direction */
+  /* top: -$b; right: -$b; bottom: -$b; left: -$b; */
+  border: 90px solid #080909;
+  background: transparent;
+  background-clip: border-box;
+  /* -webkit-prefixed version 
+     * still needed for 
+     * some mobile browsers 💔😭 */
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+  content: "";
+}
+
+@media only screen and (max-width: 920px) {
+  .aboutImage {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .aboutTitle {
+    transform: unset;
+    font-size: 60px !important;
+  }
+}

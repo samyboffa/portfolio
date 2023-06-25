@@ -1,0 +1,137 @@
+.projectList {
+  background-image: url("../public/projects/bgProjects.png");
+  background-repeat: repeat;
+  z-index: 88;
+}
+.projectContainer {
+  width: 100vw;
+  overflow: hidden;
+}
+
+.projectImage {
+  background-size: cover;
+  background-position-x: center;
+  transition: transform 0.9s ease-in-out, filter 0.4s ease-in-out,
+    background-size 0.9s ease, opacity 0.9s ease-in-out;
+  transform-origin: top left;
+}
+
+.openedProject {
+  transform: translate(200px, 0px) scale(1.2) !important;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.projectTitle,
+.projectdate {
+  font-family: Bruno Ace;
+}
+.projectTitle {
+  font-size: 60px;
+  font-weight: bold;
+}
+.projectdate {
+  font-size: 26px;
+}
+.borderTest {
+  border: 2px solid red;
+}
+.margOdd {
+  margin-right: -100px;
+}
+.margEven {
+  margin-left: -100px;
+}
+
+.projectInfo {
+  transition: transform 0.8s ease-in-out, filter 0.4s ease-in-out,
+    opacity 0.9s ease-in-out;
+  z-index: 2;
+}
+.notVisibleProject .projectImage {
+  opacity: 0;
+  transform: translateY(100px);
+  /* -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px); */
+}
+.notVisibleProject .projectInfo {
+  opacity: 0;
+  transform: translateY(-100px);
+  /* -webkit-filter: blur(50px);
+  -moz-filter: blur(50px);
+  -o-filter: blur(50px);
+  -ms-filter: blur(50px);
+  filter: blur(50px); */
+}
+.notVisibleProject .screenshotsSection {
+  opacity: 0;
+  transform: translateY(-100px);
+}
+.projectButton {
+  outline: none;
+  border: 2px solid white;
+  background-color: white;
+  color: #47628a;
+
+  height: 45px;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+  font-weight: bold;
+}
+.w200 {
+  min-width: 200px;
+}
+.w50px {
+  min-width: 50px;
+}
+.projectButton:hover {
+  background-color: transparent;
+  color: white !important;
+  transform: translateY(-5px);
+}
+.projectButton:active {
+  opacity: 0.3;
+  transform: scale(1.08);
+}
+
+.projectMain {
+  transition: width 0.4s ease-in-out;
+  width: 100vw;
+  /* min-width: 100vw; */
+}
+.screenshotsSection {
+  transition: transform 0.9s ease-in-out, filter 0.4s ease-in-out,
+    background-size 0.9s ease, opacity 0.9s ease-in-out, width 0.4s ease-in-out;
+  gap: 30px;
+  display: flex;
+  min-height: 500px;
+}
+.screenShotItem {
+  height: 100%;
+  min-height: 500px;
+}
+
+@media only screen and (max-width: 920px) {
+  .projectImage {
+    border-radius: 0px !important;
+  }
+  .margOdd {
+    margin-right: unset;
+  }
+  .margEven {
+    margin-left: unset;
+  }
+  .projectTitle {
+    font-size: 40px;
+    text-align: start;
+  }
+  .projectInfo {
+    padding-left: 5px;
+    text-align: start;
+  }
+}

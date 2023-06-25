@@ -52,7 +52,12 @@
 .link1:hover .lineHover {
   transform: translateX(100%);
 }
-
+.socialMediaIcon {
+  transform: scale(0.9);
+}
+.socialMediaIcon:hover {
+  transform: scale(0.9);
+}
 @media only screen and (max-width: 920px) {
   .secondHeaderContainer {
     width: 100vw;
