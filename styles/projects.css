@@ -1,16 +1,21 @@
 .projectList {
-  background-image: url("../public/projects/bgProjects.png");
+  /* background-image: url("../public/projects/bgProjects.png"); */
   background-repeat: repeat;
   z-index: 88;
+  transition: background-color 0.4s ease-in-out;
 }
+
 .projectContainer {
   width: 100vw;
   overflow: hidden;
+  /* height: 100vh; */
 }
 
 .projectImage {
   background-size: cover;
+  background-repeat: no-repeat;
   background-position-x: center;
+  background-position-y: center;
   transition: transform 0.9s ease-in-out, filter 0.4s ease-in-out,
     background-size 0.9s ease, opacity 0.9s ease-in-out;
   transform-origin: top left;
@@ -28,45 +33,39 @@
 .projectdate {
   font-family: Bruno Ace;
 }
+.nobreak {
+  white-space: nowrap;
+}
 .projectTitle {
   font-size: 60px;
+
   font-weight: bold;
 }
-.projectdate {
-  font-size: 26px;
-}
+
 .borderTest {
   border: 2px solid red;
 }
-.margOdd {
+/* .margOdd {
   margin-right: -100px;
 }
 .margEven {
   margin-left: -100px;
-}
+} */
 
 .projectInfo {
-  transition: transform 0.8s ease-in-out, filter 0.4s ease-in-out,
-    opacity 0.9s ease-in-out;
+  transition: transform 0.6s ease-in-out, filter 0.4s ease-in-out,
+    opacity 0.4s ease-in-out, width 0.4s ease-in-out, min-width 0.4s ease-in-out;
   z-index: 2;
+  min-width: 400px;
+  height: 100%;
 }
 .notVisibleProject .projectImage {
   opacity: 0;
   transform: translateY(100px);
-  /* -webkit-filter: blur(50px);
-  -moz-filter: blur(50px);
-  -o-filter: blur(50px);
-  -ms-filter: blur(50px);
-  filter: blur(50px); */
 }
 .notVisibleProject .projectInfo {
   opacity: 0;
   transform: translateY(-100px);
-  /* -webkit-filter: blur(50px);
-  -moz-filter: blur(50px);
-  -o-filter: blur(50px);
-  -ms-filter: blur(50px);
-  filter: blur(50px); */
 }
 .notVisibleProject .screenshotsSection {
   opacity: 0;
@@ -101,7 +100,7 @@
 
 .projectMain {
   transition: width 0.4s ease-in-out;
-  width: 100vw;
+
   /* min-width: 100vw; */
 }
 .screenshotsSection {
@@ -109,11 +108,52 @@
     background-size 0.9s ease, opacity 0.9s ease-in-out, width 0.4s ease-in-out;
   gap: 30px;
   display: flex;
-  min-height: 500px;
+  overflow-y: hidden !important;
+  overflow-x: scroll;
 }
 .screenShotItem {
   height: 100%;
   min-height: 500px;
+}
+
+.screenshotsSection::-webkit-scrollbar {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: transparent;
+}
+.screenshotsSection::-webkit-scrollbar-track {
+  background: transparent;
+}
+.screenshotsSection::-webkit-scrollbar-thumb {
+  background: #f0eded;
+  border-radius: 20px;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.screenshotsSection {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.op0 {
+  opacity: 0;
+  width: 0px !important;
+  min-width: 0px;
+}
+.trans1000 {
+  transform: translateX(10000px);
+}
+.trans-1000 {
+  transform: translateX(-10000px);
+}
+.op1 {
+  opacity: 1;
+}
+.pl100 {
+  margin-left: 200px;
+}
+.pr100 {
+  margin-right: 100px;
 }
 
 @media only screen and (max-width: 920px) {
@@ -130,7 +170,11 @@
     font-size: 40px;
     text-align: start;
   }
+  .projectInfo * {
+    white-space: pre-wrap;
+  }
   .projectInfo {
+    min-width: auto;
     padding-left: 5px;
     text-align: start;
   }
