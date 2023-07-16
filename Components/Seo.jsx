@@ -10,7 +10,7 @@ const Seo = () => {
     web scraping and integrating
     modern AI capabilities. `;
   const url = "https://sami-web-developer.bio/";
-  const image = "https://imgur.com/a/PKPknVZ";
+  const image = "https://i.imgur.com/LJIPpKN.png";
   return (
     <Head>
       <title>{title}</title>
