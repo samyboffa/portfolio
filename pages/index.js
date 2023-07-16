@@ -7,10 +7,12 @@ import ProjectList from "../Components/Projects/ProjectList";
 import ContactIcon from "../Components/Common/ContactIcon";
 import Footer from "../Components/Footer";
 import Script from "next/script";
+import Seo from "../Components/Seo";
 
 export default function Home() {
   return (
     <div>
+      <Seo />
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
