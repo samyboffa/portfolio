@@ -1,13 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { useState } from "react";
+import styleContext from "../../Context/MyContext";
 
-const ProjectCard = ({
-  project,
-  index,
-  visibleItem,
-  setvisibleItem,
-  projects,
-}) => {
+const ProjectCard = ({ project, index, visibleItem, setvisibleItem }) => {
   const containerRef = useRef();
 
   const [selected, setselected] = useState(false);
@@ -20,6 +15,7 @@ const ProjectCard = ({
       setvisibleItem(index);
     }
   };
+  const { isMobile } = useContext(styleContext);
 
   useEffect(() => {
     setselected(false);
@@ -34,29 +30,29 @@ const ProjectCard = ({
     @keyframes trans {
       0% {
         background-position-y: center;
-        border-radius: 80px;
+        border-radius: ${isMobile ? "0" : "80"}px;
       }
       50% {
         background-position-y: top;
-        border-radius: 20px;
+        border-radius: ${isMobile ? "0" : "20"}px;
       }
       100% {
         background-position-y: center;
-        border-radius: 80px;
+        border-radius: ${isMobile ? "0" : "80"}px;
       }
     }
     @keyframes transrev {
       0% {
         background-position-y: center;
-        border-radius: 20px;
+        border-radius: ${isMobile ? "0" : "20"}px;
       }
       50% {
         background-position-y: bottom;
-        border-radius: 80px;
+        border-radius: ${isMobile ? "0" : "80"}px;
       }
       100% {
         background-position-y: center;
-        border-radius: 20px;
+        border-radius: ${isMobile ? "0" : "20"}px;
       }
     }
   `;
@@ -69,7 +65,7 @@ const ProjectCard = ({
       className={`projectContainer flex-lg-nowrap w100 flex-wrap wm100 alignC py-5
       ${selected ? "overflow-hidden" : ""}
       ${odd ? "" : "reversed"}
-      ${visibleItem === index ? "" : "notVisibleProject"}
+      ${isMobile ? "" : visibleItem === index ? "" : "notVisibleProject"}
       `}
       style={{ minHeight: `${project.height}px` }}
     >

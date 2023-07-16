@@ -5,7 +5,7 @@ import styleContext from "../Context/MyContext";
 const SecondHeader = () => {
   const mobileRef = useRef();
 
-  const { mobileDepassed, setmobileDepassed } = useContext(styleContext);
+  const { setmobileDepassed } = useContext(styleContext);
 
   const scrollHandler = () => {
     const rect = mobileRef.current.getBoundingClientRect();
