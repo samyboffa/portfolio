@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useState } from "react";
-import styleContext from "../../Context/MyContext";
 
 const ProjectCard = ({
   project,
@@ -10,37 +9,20 @@ const ProjectCard = ({
   projects,
 }) => {
   const containerRef = useRef();
-  const { setbgColor } = useContext(styleContext);
 
   const [selected, setselected] = useState(false);
   const [odd] = useState(index % 2 === 0);
 
-  const scrollHandler = (e) => {
+  const scrollHandler = () => {
     const rect = containerRef.current.getBoundingClientRect();
-    // console.log(project.name, rect.top, window.innerHeight, rect.bottom);
 
-    if (rect.top < window.innerHeight / 2 && rect.bottom >= 0) {
+    if (rect.top < window.innerHeight / 1.6 && rect.bottom >= 0) {
       setvisibleItem(index);
-      setbgColor(project.color);
     }
   };
 
   useEffect(() => {
-    const hello = () => {
-      if (visibleItem === index) {
-        console.log(project.name);
-        console.log(projects[visibleItem].name);
-        // const targetElement = document.getElementById(`project${visibleItem}`);
-        // setTimeout(() => {
-        //   targetElement.scrollIntoView({
-        //     behavior: "smooth",
-        //     block: "center",
-        //     inline: "center",
-        //   });
-        // }, 500);
-      }
-    };
-    return hello();
+    setselected(false);
   }, [visibleItem]);
 
   useEffect(() => {
@@ -84,7 +66,8 @@ const ProjectCard = ({
       id={`project${index}`}
       key={index}
       ref={containerRef}
-      className={`projectContainer flex-lg-nowrap w100 flex-wrap wm100 alignC my-5 py-5
+      className={`projectContainer flex-lg-nowrap w100 flex-wrap wm100 alignC py-5
+      ${selected ? "overflow-hidden" : ""}
       ${odd ? "" : "reversed"}
       ${visibleItem === index ? "" : "notVisibleProject"}
       `}
@@ -93,7 +76,7 @@ const ProjectCard = ({
       <style>{keyframeStyles}</style>
       <div
         style={{
-          width: !selected ? "100%" : "40%",
+          width: "100%",
           minHeight: `${project.height}px`,
         }}
         className={`projectMain flex-wrap border-blue gap-5 wm100 flex-lg-nowrap alignC ${
@@ -119,7 +102,7 @@ const ProjectCard = ({
               </button>
             </a>
           )}
-          {!project.link && (
+          {/* {!project.link && (
             <button
               id={``}
               className={`projectButton w200`}
@@ -127,23 +110,17 @@ const ProjectCard = ({
                 setselected(!selected);
               }}
             >
-              {odd
-                ? selected
-                  ? "Screenshots >"
-                  : "< Screenshots"
-                : selected
-                ? "< Screenshots"
-                : "Screenshots >"}
+              Screenshots
             </button>
-          )}
+          )} */}
         </div>
 
         <div
           className={`projectInfo d-flex flex-column justify-content-center w40 wm100 ${
             odd ? "margEven" : "text-lg-end margOdd"
-          } ${selected ? (odd ? "op0 trans1000" : "op0 trans-1000") : ""}`}
+          }`}
         >
-          <div className="projectTitle nobreak w100 wm100">{project.name}</div>
+          <div className="projectTitle w100 wm100">{project.name}</div>
           <div className="projectdate f26">{project.date}</div>
           <div className="projectdate">{project.type}</div>
           <div className=" my-3">
@@ -168,27 +145,37 @@ const ProjectCard = ({
         </div>
       </div>
       {/* <div
-        className={`screenshotsSection  ${
-          visibleItem ? (odd ? "pl100" : "pr100") : "notVisibleProject "
-        }`}
-        style={{
-          width: selected ? "60%" : "0%",
-          height: `${project.height}px`,
-          overflowY: selected ? "scroll" : "hidden",
-        }}
+        className={`screenshotsSection px-4 ${
+          selected ? "shownScreenShots" : "hiddenScreenShots"
+        }
+        `}
       >
-        {["", "", "", "", ""].map((screen, index) => (
-          <img
-            key={index}
-            src="/projects/screenshots/agilix1.png"
-            style={{
-              height: `${project.height}px`,
-              width: `auto`,
-            }}
-            className="py-1"
-            alt=""
-          />
-        ))}
+        <div
+          className={`closeScreenShotContainer alignC ${
+            selected ? "" : "hiddenScreenShots"
+          }`}
+        >
+          <button
+            className="w200 projectButton"
+            onClick={() => setselected(false)}
+          >
+            <ChevronUp />
+          </button>
+        </div>
+        <div className="d-flex gap-3 imageScreenSection">
+          {["", "", "", "", ""].map((screen, index) => (
+            <img
+              key={index}
+              src="/projects/screenshots/agilix1.png"
+              style={{
+                height: `700px`,
+                width: `auto`,
+              }}
+              className="py-1 z-3"
+              alt=""
+            />
+          ))}
+        </div>
       </div> */}
     </div>
   );

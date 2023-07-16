@@ -1,8 +1,19 @@
 .projectList {
-  /* background-image: url("../public/projects/bgProjects.png"); */
   background-repeat: repeat;
   z-index: 88;
   transition: background-color 0.4s ease-in-out;
+  background-size: contain;
+  background: linear-gradient(
+    135deg,
+    rgba(1, 164, 207, 1) 0%,
+    rgba(138, 159, 199, 1) 15%,
+    rgba(161, 155, 197, 1) 32%,
+    rgba(221, 133, 205, 1) 45%,
+    rgba(186, 104, 200, 1) 65%,
+    rgba(104, 181, 175, 1) 75%,
+    rgba(18, 109, 179, 1) 85%,
+    rgba(16, 43, 115, 1) 100%
+  );
 }
 
 .projectContainer {
@@ -93,6 +104,14 @@
   color: white !important;
   transform: translateY(-5px);
 }
+.svgButton {
+  fill: #47628a;
+  width: 20px;
+  height: 20px;
+}
+.projectButton:hover * {
+  fill: white !important;
+}
 .projectButton:active {
   opacity: 0.3;
   transform: scale(1.08);
@@ -103,29 +122,60 @@
 
   /* min-width: 100vw; */
 }
-.screenshotsSection {
-  transition: transform 0.9s ease-in-out, filter 0.4s ease-in-out,
-    background-size 0.9s ease, opacity 0.9s ease-in-out, width 0.4s ease-in-out;
-  gap: 30px;
-  display: flex;
-  overflow-y: hidden !important;
-  overflow-x: scroll;
+.overflow-hidden {
+  overflow: hidden !important;
 }
-.screenShotItem {
-  height: 100%;
-  min-height: 500px;
+.screenshotsSection {
+  display: flex;
+  flex-direction: column;
+  z-index: 7;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden !important;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.4s ease-in-out;
+  gap: 30px;
+  background: linear-gradient(
+    150deg,
+    rgba(1, 164, 207, 1) 0%,
+    rgba(138, 159, 199, 1) 42%,
+    rgba(161, 155, 197, 1) 57%,
+    rgba(219, 62, 191, 1) 100%
+  );
 }
 
-.screenshotsSection::-webkit-scrollbar {
+.closeScreenShotContainer {
+  transition: all 0.4s ease-in-out;
+
+  overflow: hidden;
+  height: 10vh;
+  width: 100vw;
+  z-index: 2;
+}
+.imageScreenSection {
+  overflow-y: scroll;
+  flex: 1;
+}
+
+.hiddenScreenShots {
+  height: 0px !important;
+}
+.shownScreenShots {
+  height: 100vh;
+}
+
+.imageScreenSection::-webkit-scrollbar {
   display: block;
   width: 10px;
   height: 10px;
   background: transparent;
 }
-.screenshotsSection::-webkit-scrollbar-track {
+.imageScreenSection::-webkit-scrollbar-track {
   background: transparent;
 }
-.screenshotsSection::-webkit-scrollbar-thumb {
+.imageScreenSection::-webkit-scrollbar-thumb {
   background: #f0eded;
   border-radius: 20px;
 }
@@ -173,9 +223,15 @@
   .projectInfo * {
     white-space: pre-wrap;
   }
+  .screenshotsSection {
+    display: none;
+  }
   .projectInfo {
     min-width: auto;
     padding-left: 5px;
     text-align: start;
+  }
+  .hidemobile {
+    display: none !important;
   }
 }

@@ -1,0 +1,56 @@
+.contactIcon {
+  z-index: 10;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+}
+.contactContainer {
+  border: 2px solid white;
+  border-radius: 50%;
+  padding: 15px;
+  transition: all 0.2s ease-in-out;
+}
+.pulsed {
+  animation-name: pulse;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+.contactContainer:hover {
+  transform: scale(1.02) translateY(-5px);
+  border-color: transparent;
+}
+.contactContainer:hover img {
+  transform: scale(1.2);
+}
+.contactContainer img {
+  transition: all 0.2s ease-in-out;
+  width: 30px;
+}
+.contactList {
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  gap: 5px;
+  height: fit-content;
+}
+.border-transparent {
+  border-color: transparent;
+}
+.openedContact {
+  max-height: 420px;
+}
+.closedContact {
+  max-height: 0px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

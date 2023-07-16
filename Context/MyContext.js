@@ -5,6 +5,7 @@ const styleContext = createContext();
 export const Layout = ({ children }) => {
   const [selected, setselected] = useState(0);
   const [bgColor, setbgColor] = useState("red");
+  const [mobileDepassed, setmobileDepassed] = useState(false);
 
   return (
     <styleContext.Provider
@@ -13,6 +14,8 @@ export const Layout = ({ children }) => {
         setselected,
         bgColor,
         setbgColor,
+        mobileDepassed,
+        setmobileDepassed,
       }}
     >
       {children}

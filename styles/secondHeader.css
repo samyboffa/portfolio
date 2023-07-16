@@ -5,6 +5,7 @@
   border: 10px solid black;
   height: 700px;
   border-radius: 20px;
+  background-size: 100px;
   background: linear-gradient(
     150deg,
     rgba(1, 164, 207, 1) 0%,
@@ -19,7 +20,7 @@
 .myImage {
   position: absolute;
   z-index: 1;
-  left: 50%;
+  right: 1%;
 }
 .secondHeaderInline {
   z-index: 2;
@@ -27,6 +28,7 @@
 .inlineTitle {
   font-weight: 800;
   font-size: 6vw;
+  opacity: 0.8;
 }
 .inlineSubtitle {
   font-size: 36px;

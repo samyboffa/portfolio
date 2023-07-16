@@ -3,7 +3,10 @@ import ColorCircle from "./Common/ColorCircle";
 
 const About = () => {
   return (
-    <div className="text-white d-flex align-items-center justify-content-center gap-3 position-relative aboutContainer wm100">
+    <div
+      id="aboutTag"
+      className="text-white d-flex align-items-center justify-content-center gap-3 position-relative aboutContainer wm100"
+    >
       <ColorCircle width="1000" height="700" top={10} left={60} />
       <ColorCircle
         color={"rgba(77, 159, 12, 0.1)"}

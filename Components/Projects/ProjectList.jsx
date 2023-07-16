@@ -8,6 +8,7 @@ const ProjectList = () => {
   const { bgColor } = useContext(styleContext);
   return (
     <div
+      id="projectsTag"
       className="text-white mt-5 projectList overXHidden py-5"
       style={{ backgroundColor: bgColor }}
     >

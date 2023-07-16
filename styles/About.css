@@ -28,9 +28,7 @@
   height: 600px;
   border-radius: 50%;
   background-repeat: no-repeat;
-  /* background-image: url("/grid_0.png"); */
-  background: url("/grid_0.png") 50% / cover border-box /* background-origin */
-    padding-box;
+  background: url("/grid_0.png") 50% / cover border-box padding-box;
 }
 
 .aboutImage::before {

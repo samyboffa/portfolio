@@ -1,6 +1,5 @@
 import React from "react";
 import AnimatedText from "./Common/AnimatedText";
-import SecondHeader from "./SecondHeader";
 
 const Hero = () => {
   return (
