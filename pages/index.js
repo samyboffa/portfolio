@@ -13,6 +13,19 @@ export default function Home() {
   return (
     <div>
       <Seo />
+
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-N1B55606JS"
+      ></Script>
+      <Script>
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-N1B55606JS');`}
+      </Script>
+
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`
               (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
